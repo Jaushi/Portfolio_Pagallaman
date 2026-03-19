@@ -9,15 +9,16 @@
     />
     <meta name="author" content="Joshua Pagallaman" />
     <title>Joshua Pagallaman - Developer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <!-- Header Section -->
     <header>
       <nav>
         <img
-          src="assets/profile.jpg"
+          src="assets/images/prof_portfolio.png"
           alt="Joshua Pagallaman Profile Photo"
-          width="150"
+          width="200"
           height="200"
         />
         <h1>Joshua Pagallaman</h1>
@@ -28,68 +29,71 @@
         </p>
         <p>
           <a
-            href="assets/PAGALLAMAN_CV (1).pdf"
+            href="assets/docs/PAGALLAMAN_CV (1).pdf"
             download="Joshua_Pagallaman_Resume.pdf"
-            >Resume</a
+            >Download CV</a
           >
         </p>
 
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="toggle dark mode">
+          Dark
+        </button>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Tech Stack</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Socials</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Main Content -->
     <main>
+      <!-- Contact Section -->
+      <section id="social">
+        <h2>Social Links</h2>
+        <ul>
+          <li>
+            Email:
+            <a href="mailto:jap.pagallaman@gmail.com"
+              >jap.pagallaman@gmail.com</a
+            >
+          </li>
+
+          <li>
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/joshuapagallaman/"
+              target="_blank"
+              >Joshua Allan Pagallaman</a
+            >
+          </li>
+          <li>
+            GitHub:
+            <a href="https://github.com/Jaushi" target="_blank"
+              >github.com/Jaushi</a
+            >
+          </li>
+
+          <li>
+            Instagram:
+            <a href="https://www.instagram.com/jap.pagallaman" target="_blank"
+              >@jap.pagallaman</a
+            >
+          </li>
+        </ul>
+      </section>
       <!-- About Section -->
       <section id="about">
         <h2>About Me</h2>
         <p>
-          Hi, I'm Joshua Allan P. Pagallaman. I'm currently pursuing my <br />
-          Bachelor of Science in Computer Science at the Polytechnic University
-          <br />
-          of the Philippines, Manila, with an expected graduation in July 2027.
-          <br />
-          I'm a developer who genuinely enjoys the process of building
-          thoughtful <br />
-          software, whether that means designing human-centric interfaces or
-          <br />
-          architecting the backend systems that power them.<br />
-        </p>
-
-        <p>
-          In my recent roles as a Backend Developer at ByteMinds Software <br />
-          Solutions and an intern at Oikos Technologies, I focused on writing
-          <br />
-          clean, modular code and optimizing system performance. I enjoy working
-          <br />
-          with technologies like Java, Spring Boot, Node.js, and React. I
-          approach <br />
-          my projects with a sense of kodawari, a quiet dedication to the craft,
-          <br />
-          ensuring that what I build is not only functional but highly
-          maintainable <br />
-          and scalable.
-        </p>
-
-        <p>
-          Beyond my day-to-day coding, I love collaborating with others to solve
-          <br />
-          real-world problems. This collaborative drive has led me to pitch and
-          <br />
-          build solutions at events like the Byteme UST CSSprint, where my team
-          <br />
-          won first place by focusing on empathetic AI. I'm also deeply
-          committed <br />
-          to fostering a culture of shared learning as an Executive Director for
-          <br />
-          the Microsoft Student Community, where I organize workshops to help
-          <br />
-          upskill my fellow students.<br />
+          Hi, I'm Joshua Allan P. Pagallaman, a Computer Science student at PUP Manila (Class of 2027) and a developer 
+          who genuinely enjoys building thoughtful, human-centric software from the interface down to the backend systems. 
+          In my work as a Backend Developer at ByteMinds Software Solutions, I focus on writing clean, scalable code using Java, Spring Boot, Node.js, and React, 
+          always approaching my projects with kodawari—a quiet dedication to the craft.
+          I'm deeply driven by collaborative problem-solving, whether that means building empathetic, 
+          first-place AI solutions at hackathons like the Byteme UST CSSprint, or fostering a culture of shared learning as an 
+          Executive Director for the Microsoft Student Community.
         </p>
       </section>
 
@@ -242,45 +246,32 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact">
-        <h2>Social Links</h2>
-        <ul>
-          <li>
-            Email:
-            <a href="mailto:jap.pagallaman@gmail.com"
-              >jap.pagallaman@gmail.com</a
-            >
-          </li>
-
-          <li>
-            LinkedIn:
-            <a
-              href="https://www.linkedin.com/in/joshuapagallaman/"
-              target="_blank"
-              >Joshua Allan Pagallaman</a
-            >
-          </li>
-          <li>
-            GitHub:
-            <a href="https://github.com/Jaushi" target="_blank"
-              >github.com/Jaushi</a
-            >
-          </li>
-
-          <li>
-            Instagram:
-            <a href="https://www.instagram.com/jap.pagallaman" target="_blank"
-              >@jap.pagallaman</a
-            >
-          </li>
-        </ul>
-      </section>
     </main>
 
     <!-- Footer -->
     <footer>
       <p>&copy; 2026 Joshua Pagallaman. All rights reserved.</p>
     </footer>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const button = document.getElementById("theme-toggle");
+        const saved = localStorage.getItem("theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+        const initial = saved || (systemDark.matches ? "dark" : "light");
+
+        root.setAttribute("data-theme", initial);
+        button.textContent = initial === 'dark' ? 'Light' : 'Dark';
+
+        button.addEventListener("click", () => {
+          const newTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+          button.textContent = newTheme === 'dark' ? 'Light' : 'Dark';
+        })
+
+      })
+    </script>
   </body>
 </html>
