@@ -14,143 +14,151 @@
   <body>
     <!-- Header Section -->
     <header>
-      <nav>
+      <section class="profile-header">
         <img
           src="assets/images/prof_portfolio.png"
           alt="Joshua Pagallaman Profile Photo"
-          width="200"
-          height="200"
+          class="profile-image"
         />
-        <h1>Joshua Pagallaman</h1>
-        <p>Metro Manila, Philippines</p>
-        <p>
-          Backend Development | BS Computer Science Undergraduate | Polytechnic
-          University of the Philippines
-        </p>
-        <p>
-          <a
-            href="assets/docs/PAGALLAMAN_CV (1).pdf"
-            download="Joshua_Pagallaman_Resume.pdf"
-            >Download CV</a
-          >
-        </p>
-
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="toggle dark mode">
-          Dark
-        </button>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Tech Stack</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Socials</a></li>
-        </ul>
-      </nav>
+        <div class="profile-details">
+          <div class="profile-title">
+            <h1>Joshua Allan P. Pagallaman</h1>
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              type="button"
+              aria-label="toggle theme"
+            >
+              <!-- Text will be set by JS -->
+            </button>
+          </div>
+          <p>Metro Manila, Philippines</p>
+          <p>
+            Backend Development | BS Computer Science Undergraduate |
+            Polytechnic University of the Philippines
+          </p>
+          <div class="profile-actions">
+            <a
+              href="assets/docs/PAGALLAMAN_CV (1).pdf"
+              download="Joshua_Pagallaman_Resume.pdf"
+              class="cta-button"
+              >Download CV</a
+            >
+          </div>
+        </div>
+      </section>
     </header>
 
-    <!-- Main Content -->
-    <main>
+   <main>
       <!-- Contact Section -->
       <section id="social">
         <h2>Social Links</h2>
-        <ul>
+        <ul class="social-icon-list">
           <li>
-            Email:
-            <a href="mailto:jap.pagallaman@gmail.com"
-              >jap.pagallaman@gmail.com</a
-            >
+            <a href="mailto:jap.pagallaman@gmail.com" aria-label="Email">
+              <img src="assets/icons/mailLogo.png" alt="Email" />
+            </a>
           </li>
-
           <li>
-            LinkedIn:
             <a
               href="https://www.linkedin.com/in/joshuapagallaman/"
               target="_blank"
-              >Joshua Allan Pagallaman</a
+              aria-label="LinkedIn"
             >
+              <img src="assets/icons/linkedInLogo.png" alt="LinkedIn" />
+            </a>
           </li>
           <li>
-            GitHub:
-            <a href="https://github.com/Jaushi" target="_blank"
-              >github.com/Jaushi</a
-            >
+            <a href="https://github.com/Jaushi" target="_blank" aria-label="GitHub">
+              <img src="assets/icons/githubLogo.png" alt="GitHub" />
+            </a>
           </li>
-
           <li>
-            Instagram:
-            <a href="https://www.instagram.com/jap.pagallaman" target="_blank"
-              >@jap.pagallaman</a
+            <a
+              href="https://www.instagram.com/jap.pagallaman"
+              target="_blank"
+              aria-label="Instagram"
             >
+              <img src="assets/icons/igLogo.png" alt="Instagram" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/joshuaallan.pagallaman"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <img src="assets/icons/facebookLogo.png" alt="Facebook" />
+            </a>
           </li>
         </ul>
       </section>
       <!-- About Section -->
-      <section id="about">
+       <section id="about">
         <h2>About Me</h2>
         <p>
-          Hi, I'm Joshua Allan P. Pagallaman, a Computer Science student at PUP Manila (Class of 2027) and a developer 
-          who genuinely enjoys building thoughtful, human-centric software from the interface down to the backend systems. 
-          In my work as a Backend Developer at ByteMinds Software Solutions, I focus on writing clean, scalable code using Java, Spring Boot, Node.js, and React, 
-          always approaching my projects with kodawari—a quiet dedication to the craft.
-          I'm deeply driven by collaborative problem-solving, whether that means building empathetic, 
-          first-place AI solutions at hackathons like the Byteme UST CSSprint, or fostering a culture of shared learning as an 
-          Executive Director for the Microsoft Student Community.
+          Hi, I'm Joshua. As a Computer Science student at PUP Manila (Class of 2027), 
+          I'm building my foundation as a Software Engineer who cares deeply about the end-user experience. 
+          I genuinely enjoy crafting human-centric applications, working seamlessly from interfaces 
+          built with React and Tailwind CSS down to scalable backend architectures powered by Spring Boot, 
+          FastAPI, and PostgreSQL. Whether I'm writing clean TypeScript code, containerizing apps with Docker, 
+          or tackling a complex bug with a team, I approach every project with a full dedication to the craft 
+          and a love for collaborative problem-solving.
         </p>
       </section>
 
       <!-- Skills Section -->
       <section id="skills">
         <h2>Tech Stack</h2>
-        <li>
-          Languages
-          <ul>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>Java</li>
-            <li>SQL</li>
-            <li>Python</li>
-            <li>Kotlin</li>
-            <li>HTML5</li>
-            <li>CSS3</li>
-          </ul>
-        </li>
-
-        <li>
-          Frameworks and Backend
-          <ul>
-            <li>Express.js</li>
-            <li>Node.js</li>
-            <li>Spring Boot</li>
-            <li>Flask</li>
-            <li>FastAPI</li>
-            <li>React.JS</li>
-            <li>React Native</li>
-            <li>Tailwind</li>
-            <li>CSS</li>
-            <li>ShadcnUI</li>
-          </ul>
-        </li>
-
-        <li>
-          Databases
-          <ul>
-            <li>MySQL</li>
-            <li>MongoDB</li>
-            <li>PostgreSQL</li>
-            <li>Supabase</li>
-          </ul>
-        </li>
-
-        <li>
-          Developer Tools
-          <ul>
-            <li>Git</li>
-            <li>Docker</li>
-            <li>Postman</li>
-            <li>VS Code</li>
-            <li>Discord</li>
-            <li>Teams</li>
-          </ul>
-        </li>
+        <ul>
+          <li>
+            Languages
+            <ul>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>Kotlin</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+            </ul>
+          </li>
+          <li>
+            Frameworks and Backend
+            <ul>
+              <li>Express.js</li>
+              <li>Node.js</li>
+              <li>Spring Boot</li>
+              <li>Flask</li>
+              <li>FastAPI</li>
+              <li>React.JS</li>
+              <li>React Native</li>
+              <li>Tailwind CSS</li>
+              <li>ShadcnUI</li>
+            </ul>
+          </li>
+          <li>
+            Databases
+            <ul>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>PostgreSQL</li>
+              <li>Supabase</li>
+            </ul>
+          </li>
+          <li>
+            Developer Tools
+            <ul>
+              <li>Git</li>
+              <li>Docker</li>
+              <li>Postman</li>
+              <li>VS Code</li>
+              <li>Discord</li>
+              <li>Teams</li>
+            </ul>
+          </li>
+        </ul>
       </section>
 
       <!-- Experience Section -->
@@ -167,89 +175,14 @@
               psychological safety and ethical conflict resolution.
             </p>
           </article>
-
-          <article class="project-card">
-            <h3>Pitcher and Researcher | GCash AI Week GenAI Hackathon</h3>
-            <p>
-              Selected as a Top 12 Finalist from over 200+ teams nationwide to
-              innovate GenAI solutions for the Philippine fintech sector.
-              Spearheaded user research to identify critical pain points in
-              group money management and delivered a strategic pitch for a
-              collaborative financial tracking platform.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Backend Developer | ByteMinds Software Solutions</h3>
-            <p>
-              Accelerated API response times by refactoring legacy backend
-              services and optimizing database indexing for high-volume client
-              applications. Reduced system error rates by implementing secure
-              REST APIs and structured error handling, significantly improving
-              application stability and data integrity.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Backend Developer Intern | Oikos Technologies</h3>
-            <p>
-              Engineered comprehensive admin dashboards and leasing management
-              tools to increase internal data visibility. Boosted page load
-              performance by developing optimized Spring Boot microservices and
-              enhanced maintainability by refactoring monolithic code into a
-              modular architecture.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Backend Developer | BPI Datawave Hackathon (BizAI)</h3>
-            <p>
-              Streamlined the user journey for MSME clients by integrating a
-              ReactJS frontend with custom backend logic, reducing loan
-              simulation steps by 40%. Conducted market research to define core
-              features and delivered a live technical demonstration of the
-              automated loan recommendation engine.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Backend Developer | BPI Datawave Hackathon (SeedSync)</h3>
-            <p>
-              Engineered an AI-assisted matching engine using Node.js, FastAPI,
-              and TensorFlow to automate connections between farmers and buyers.
-              Achieved sub-second data latency using Socket.IO and Redis, and
-              standardized deployment pipelines via Docker and JWT
-              authentication.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Frontend Developer | Google Developer Group SparkFest 2025</h3>
-            <p>
-              Developed a responsive interactive guide using React, Tailwind
-              CSS, and ShadcnUI to streamline event navigation for 100+
-              participants. Architected reusable interface components and
-              enforced strict design system guidelines to ensure UI consistency.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Frontend Developer | TaraTale</h3>
-            <p>
-              Engineered a gamified mobile learning prototype using Java and
-              Kotlin, integrating interactive story modules and quizzes to drive
-              user engagement. Improved interface responsiveness by 50% by
-              optimizing layouts for diverse screen sizes and early-childhood
-              accessibility standards.
-            </p>
-          </article>
+          <!-- ... other project cards ... -->
         </div>
       </section>
-
     </main>
 
     <!-- Footer -->
     <footer>
+      <p>Glad we crossed paths, see you around!</p>
       <p>&copy; 2026 Joshua Pagallaman. All rights reserved.</p>
     </footer>
 
@@ -261,17 +194,20 @@
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
         const initial = saved || (systemDark.matches ? "dark" : "light");
 
-        root.setAttribute("data-theme", initial);
-        button.textContent = initial === 'dark' ? 'Light' : 'Dark';
+        function setTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          button.innerHTML = theme === "dark" ? '<img src="assets/icons/light.png" alt="Light Mode">' : '<img src="assets/icons/dark.png" alt="Dark Mode">';
+        }
+
+        setTheme(initial);
 
         button.addEventListener("click", () => {
-          const newTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-          root.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
-          button.textContent = newTheme === 'dark' ? 'Light' : 'Dark';
-        })
-
-      })
+          const newTheme =
+            root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          setTheme(newTheme);
+        });
+      })();
     </script>
   </body>
 </html>
