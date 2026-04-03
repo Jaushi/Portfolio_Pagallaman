@@ -9,6 +9,8 @@
     />
     <meta name="author" content="Joshua Pagallaman" />
     <title>Joshua Pagallaman - Developer Portfolio</title>
+        <link rel="icon" type="image/png" href="assets/images/prof_portfolio.png" />
+
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -23,20 +25,27 @@
         <div class="profile-details">
           <div class="profile-title">
             <h1>Joshua Allan P. Pagallaman</h1>
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              type="button"
-              aria-label="toggle theme"
-            >
-              <!-- Text will be set by JS -->
-            </button>
+            <div class="theme-slider-container">
+              <input
+                type="checkbox"
+                id="theme-toggle-checkbox"
+                class="theme-toggle-checkbox"
+              />
+              <label for="theme-toggle-checkbox" class="theme-slider">
+                <span class="slider-icon moon"
+                  ><img src="assets/icons/dark.png" alt="Dark Mode"
+                /></span>
+                <span class="slider-icon sun"
+                  ><img src="assets/icons/light.png" alt="Light Mode"
+                /></span>
+              </label>
+            </div>
           </div>
-          <p>Metro Manila, Philippines</p>
-          <p>
-            Backend Development | BS Computer Science Undergraduate |
-            Polytechnic University of the Philippines
+          <p class="location">
+            <img src="assets/icons/pinLogo.png" alt="Location" /> Metro Manila,
+            Philippines
           </p>
+          <p>Backend Development | BS Computer Science | PUP Manila '27</p>
           <div class="profile-actions">
             <a
               href="assets/docs/PAGALLAMAN_CV (1).pdf"
@@ -49,63 +58,77 @@
       </section>
     </header>
 
-   <main>
-      <!-- Contact Section -->
-      <section id="social">
-        <h2>Social Links</h2>
-        <ul class="social-icon-list">
-          <li>
-            <a href="mailto:jap.pagallaman@gmail.com" aria-label="Email">
-              <img src="assets/icons/mailLogo.png" alt="Email" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/joshuapagallaman/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <img src="assets/icons/linkedInLogo.png" alt="LinkedIn" />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/Jaushi" target="_blank" aria-label="GitHub">
-              <img src="assets/icons/githubLogo.png" alt="GitHub" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/jap.pagallaman"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <img src="assets/icons/igLogo.png" alt="Instagram" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/joshuaallan.pagallaman"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <img src="assets/icons/facebookLogo.png" alt="Facebook" />
-            </a>
-          </li>
-        </ul>
-      </section>
+    <main>
       <!-- About Section -->
-       <section id="about">
-        <h2>About Me</h2>
-        <p>
-          Hi, I'm Joshua. As a Computer Science student at PUP Manila (Class of 2027), 
-          I'm building my foundation as a Software Engineer who cares deeply about the end-user experience. 
-          I genuinely enjoy crafting human-centric applications, working seamlessly from interfaces 
-          built with React and Tailwind CSS down to scalable backend architectures powered by Spring Boot, 
-          FastAPI, and PostgreSQL. Whether I'm writing clean TypeScript code, containerizing apps with Docker, 
-          or tackling a complex bug with a team, I approach every project with a full dedication to the craft 
-          and a love for collaborative problem-solving.
-        </p>
-      </section>
+      <div class="info-grid">
+        <section id="about">
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm Joshua. As a Computer Science student at PUP Manila (Class
+            of 2027), I'm building my foundation as a Software Engineer who
+            cares deeply about the end-user experience. I genuinely enjoy
+            crafting human-centric applications, working seamlessly from
+            interfaces built with React and Tailwind CSS down to scalable
+            backend architectures powered by Spring Boot, FastAPI, and
+            PostgreSQL. Whether I'm writing clean TypeScript code,
+            containerizing apps with Docker, or tackling a complex bug with a
+            team, I approach every project with a full dedication to the craft
+            and a love for collaborative problem-solving.
+          </p>
+        </section>
+        <!-- Contact Section -->
+        <section id="social">
+          <h2>Social Links</h2>
+          <ul class="social-icon-list">
+            <li>
+              <a href="mailto:jap.pagallaman@gmail.com" aria-label="Email">
+                <img src="assets/icons/mailLogo.png" alt="Email" />
+                <span>Email: jap.pagallaman@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/joshuapagallaman/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <img src="assets/icons/linkedInLogo.png" alt="LinkedIn" />
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Jaushi"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <img src="assets/icons/githubLogo.png" alt="GitHub" />
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/jap.pagallaman"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <img src="assets/icons/igLogo.png" alt="Instagram" />
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/joshuaallan.pagallaman"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <img src="assets/icons/facebookLogo.png" alt="Facebook" />
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
 
       <!-- Skills Section -->
       <section id="skills">
@@ -189,22 +212,21 @@
     <script>
       (() => {
         const root = document.documentElement;
-        const button = document.getElementById("theme-toggle");
+        const toggleCheckbox = document.getElementById("theme-toggle-checkbox");
         const saved = localStorage.getItem("theme");
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-        const initial = saved || (systemDark.matches ? "dark" : "light");
 
         function setTheme(theme) {
           root.setAttribute("data-theme", theme);
           localStorage.setItem("theme", theme);
-          button.innerHTML = theme === "dark" ? '<img src="assets/icons/light.png" alt="Light Mode">' : '<img src="assets/icons/dark.png" alt="Dark Mode">';
+          toggleCheckbox.checked = theme === "dark";
         }
 
-        setTheme(initial);
+        const initialTheme = saved || (systemDark.matches ? "dark" : "light");
+        setTheme(initialTheme);
 
-        button.addEventListener("click", () => {
-          const newTheme =
-            root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        toggleCheckbox.addEventListener("change", () => {
+          const newTheme = toggleCheckbox.checked ? "dark" : "light";
           setTheme(newTheme);
         });
       })();
