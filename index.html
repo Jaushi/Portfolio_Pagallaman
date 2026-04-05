@@ -9,7 +9,7 @@
     />
     <meta name="author" content="Joshua Pagallaman" />
     <title>Joshua Pagallaman - Developer Portfolio</title>
-        <link rel="icon" type="image/png" href="assets/images/prof_portfolio.png" />
+    <link rel="icon" type="image/png" href="assets/images/prof_portfolio.png" />
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -59,97 +59,105 @@
     </header>
 
     <main>
-      <!-- About Section -->
-      <div class="info-grid">
-        <section id="about">
-          <h2>About Me</h2>
-          <p>
-            Hi, I'm Joshua. As a Computer Science student at PUP Manila (Class
-            of 2027), I'm building my foundation as a Software Engineer who
-            cares deeply about the end-user experience. I genuinely enjoy
-            crafting human-centric applications, working seamlessly from
-            interfaces built with React and Tailwind CSS down to scalable
-            backend architectures powered by Spring Boot, FastAPI, and
-            PostgreSQL. Whether I'm writing clean TypeScript code,
-            containerizing apps with Docker, or tackling a complex bug with a
-            team, I approach every project with a full dedication to the craft
-            and a love for collaborative problem-solving.
-          </p>
-        </section>
-        <!-- Contact Section -->
-        <section id="social">
-          <h2>Social Links</h2>
-          <ul class="social-icon-list">
-            <li>
-              <a href="mailto:jap.pagallaman@gmail.com" aria-label="Email">
-                <img src="assets/icons/mailLogo.png" alt="Email" />
-                <span>Email: jap.pagallaman@gmail.com</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/joshuapagallaman/"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <img src="assets/icons/linkedInLogo.png" alt="LinkedIn" />
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Jaushi"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <img src="assets/icons/githubLogo.png" alt="GitHub" />
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/jap.pagallaman"
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <img src="assets/icons/igLogo.png" alt="Instagram" />
-                <span>Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/joshuaallan.pagallaman"
-                target="_blank"
-                aria-label="Facebook"
-              >
-                <img src="assets/icons/facebookLogo.png" alt="Facebook" />
-                <span>Facebook</span>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </div>
+  <!-- Main Content Grid -->
+  <div class="info-grid">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Joshua. I'm building my foundation as a Software Engineer who
+        cares deeply about the end-user experience. I like to live in the space 
+        where human psychology meets scalable architecture. Whether I'm designing 
+        a snappy React interface, wrestling Docker containers into submission, or 
+        pitching concepts at hackathons, my goal is always the same: 
+        build things that actually make people's lives easier and hopefully don't break in 
+        production. When I'm not optimizing Spring Boot backends or querying PostgreSQL, 
+        you can usually find me running or playing sports touching some grass other than that I may be 
+        finding the perfect Tailwind color palette. If you're into human-centric tech, building cool 
+        things, or just want to chat about the latest tech trends, let's connect!
+      </p>
+    </section>
+
+    <div class="right-column">
+      <!-- Social Links Section -->
+      <section id="social">
+        <h2>Social Links</h2>
+        <ul class="social-icon-list">
+          <li>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=jap.pagallaman@gmail.com"
+              target="_blank"
+            >
+              <img src="assets/icons/mailLogo.png" alt="Email" />
+              <span>Email: jap.pagallaman@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/joshuapagallaman/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <img src="assets/icons/linkedInLogo.png" alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Jaushi"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img src="assets/icons/githubLogo.png" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/jap.pagallaman"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img src="assets/icons/igLogo.png" alt="Instagram" />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/joshuaallan.pagallaman"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <img src="assets/icons/facebookLogo.png" alt="Facebook" />
+              <span>Facebook</span>
+            </a>
+          </li>
+        </ul>
+      </section>
 
       <!-- Skills Section -->
       <section id="skills">
-        <h2>Tech Stack</h2>
-        <ul>
-          <li>
-            Languages
-            <ul>
+        <div class="section-head">
+          <h2>Tech Stack</h2>
+        </div>
+
+        <div class="tech-grid">
+          <div class="tech-group">
+            <h3>Languages</h3>
+            <ul class="tech-tags">
               <li>JavaScript</li>
               <li>TypeScript</li>
               <li>Java</li>
               <li>SQL</li>
               <li>Python</li>
               <li>Kotlin</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
+              <li>HTML</li>
+              <li>CSS</li>
             </ul>
-          </li>
-          <li>
-            Frameworks and Backend
-            <ul>
+          </div>
+
+          <div class="tech-group">
+            <h3>Frameworks and Backend</h3>
+            <ul class="tech-tags">
               <li>Express.js</li>
               <li>Node.js</li>
               <li>Spring Boot</li>
@@ -160,48 +168,50 @@
               <li>Tailwind CSS</li>
               <li>ShadcnUI</li>
             </ul>
-          </li>
-          <li>
-            Databases
-            <ul>
+          </div>
+
+          <div class="tech-group">
+            <h3>Databases</h3>
+            <ul class="tech-tags">
               <li>MySQL</li>
               <li>MongoDB</li>
               <li>PostgreSQL</li>
               <li>Supabase</li>
             </ul>
-          </li>
-          <li>
-            Developer Tools
-            <ul>
+          </div>
+
+          <div class="tech-group">
+            <h3>Developer Tools</h3>
+            <ul class="tech-tags">
               <li>Git</li>
               <li>Docker</li>
               <li>Postman</li>
               <li>VS Code</li>
-              <li>Discord</li>
-              <li>Teams</li>
             </ul>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>UI/UX, Researcher, Pitcher | Byteme UST CSSprint Hackathon</h3>
-            <p>
-              Secured 1st Place with Project Clara by designing a human-centric
-              UI/UX and delivering a winning pitch focused on an empathetic AI
-              over traditional surveillance tools. Led user research on Gen Z
-              workplace anxiety to pivot the product strategy toward
-              psychological safety and ethical conflict resolution.
-            </p>
-          </article>
-          <!-- ... other project cards ... -->
+          </div>
         </div>
       </section>
-    </main>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>UI/UX, Researcher, Pitcher | Byteme UST CSSprint Hackathon</h3>
+        <p>
+          Secured 1st Place with Project Clara by designing a human-centric
+          UI/UX and delivering a winning pitch focused on an empathetic AI
+          over traditional surveillance tools. Led user research on Gen Z
+          workplace anxiety to pivot the product strategy toward
+          psychological safety and ethical conflict resolution.
+        </p>
+      </article>
+      <!-- ... other project cards ... -->
+    </div>
+  </section>
+</main>
 
     <!-- Footer -->
     <footer>

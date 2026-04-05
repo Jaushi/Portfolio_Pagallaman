@@ -16,6 +16,7 @@
   --bg-secondary-dark: #161a22;
   --border-color-dark: #2a3441;
   --shadow-color-dark: 220 40% 2%;
+  --button-bg-dark: #3b82f6;
 
   --container: 1100px;
   --radius: 14px;
@@ -212,20 +213,22 @@ main {
 .cta-button {
   display: inline-block;
   padding: 1rem 1.5rem;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-dark);
   color: white;
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 500;
   transition:
     transform 0.2s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
   box-shadow: var(--shadow-sm);
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+  background-color: var(--button-bg-dark)
 }
 
 @media (max-width: 768px) {
@@ -256,27 +259,93 @@ section h2 {
   color: var(--text-primary);
 }
 
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.view-all {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.view-all:hover {
+  color: var(--primary-color);
+}
+
+.tech-grid { 
+  display: grid;
+  gap: 1rem;
+}
+
+.tech-group h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-tags li {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  box-shadow: none;
+  max-width: none;
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: start;
-  margin: 1rem 0 2rem;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 @media (min-width: 992px) {
   .info-grid {
-    grid-template-columns: 1.6fr 1fr; /* About | Social */
+    grid-template-columns: 1.6fr 1fr;
   }
 }
 
 #about,
+#skills,
 #social {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.25rem;
   box-shadow: var(--shadow-sm);
+}
+
+#skills {
+  max-width: 642px;
+  width: 100%;
+  margin-top: 0;
 }
 
 .social-icon-list {
@@ -302,17 +371,17 @@ section h2 {
   padding: 1rem 0.5rem;
   text-decoration: none;
   color: var(--text-secondary);
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+
 }
 
 .social-icon-list a:hover {
   color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  transition:
-    color 0.3s ease,
-    transform 0.2s ease,
-    box-shadow 0.3s ease;
 }
 
 .social-icon-list img {
@@ -330,19 +399,9 @@ section h2 {
   margin: 0 auto;
 }
 
-#skills ul,
 .project-grid {
   display: grid;
   gap: 1rem;
-}
-
-#skills li {
-  list-style: none;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow-sm);
 }
 
 .project-card {
