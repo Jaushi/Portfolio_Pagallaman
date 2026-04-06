@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="All projects by Joshua Pagallaman" />
+    <meta name="author" content="Joshua Pagallaman" />
+    <title>All Projects - Joshua Pagallaman</title>
+    <link rel="icon" type="image/png" href="assets/images/prof_portfolio.png" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <section class="profile-header">
+        <div class="profile-details full-width-details">
+          <div class="profile-title">
+            <h1>Project Experience</h1>
+            <div class="theme-slider-container">
+              <input
+                type="checkbox"
+                id="theme-toggle-checkbox"
+                class="theme-toggle-checkbox"
+              />
+              <label for="theme-toggle-checkbox" class="theme-slider">
+                <span class="slider-icon moon"
+                  ><img src="assets/icons/dark.png" alt="Dark Mode"
+                /></span>
+                <span class="slider-icon sun"
+                  ><img src="assets/icons/light.png" alt="Light Mode"
+                /></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    
+    <main>
+      <div class="profile-actions">
+        <a href="index.html" class="home"> &larr; Home</a>
+      </div>
+      <section id="Project Experience" class="project-experience">
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>UI/UX, Researcher, Pitcher | Byteme UST CSSprint Hackathon</h3>
+            <p>
+              Secured 1st Place with Project Clara by designing a human-centric
+              UI/UX and delivering a winning pitch focused on an empathetic AI
+              over traditional surveillance tools. Led user research on Gen Z
+              workplace anxiety to pivot the product strategy toward
+              psychological safety and ethical conflict resolution.
+            </p>
+          </article>
+          <!-- Add more project cards here -->
+          <article class="project-card">
+            <h3>Project 2</h3>
+            <p>Description for project 2.</p>
+          </article>
+          <article class="project-card">
+            <h3>Project 3</h3>
+            <p>Description for project 3.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Glad we crossed paths, see you around!</p>
+      <p>&copy; 2026 Joshua Pagallaman. All rights reserved.</p>
+    </footer>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const toggleCheckbox = document.getElementById("theme-toggle-checkbox");
+        const saved = localStorage.getItem("theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function setTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          toggleCheckbox.checked = theme === "dark";
+        }
+
+        const initialTheme = saved || (systemDark.matches ? "dark" : "light");
+        setTheme(initialTheme);
+
+        toggleCheckbox.addEventListener("change", () => {
+          const newTheme = toggleCheckbox.checked ? "dark" : "light";
+          setTheme(newTheme);
+        });
+      })();
+    </script>
+  </body>
+</html>
