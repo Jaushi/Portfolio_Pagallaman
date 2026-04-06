@@ -317,7 +317,7 @@ section h2 {
 .left-column {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+    gap: 1.5rem;
 }
 
 .right-column {
@@ -396,9 +396,23 @@ section h2 {
 #about p {
   text-align: justify;
   max-width: 70ch;
-  margin: 0 auto;
 }
 
+#experience {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+#community-involvement {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
 .project-grid {
   display: grid;
   gap: 1rem;
@@ -410,6 +424,7 @@ section h2 {
   border-radius: var(--radius);
   padding: 1rem;
   box-shadow: var(--shadow-sm);
+  text-align: justify;
   transition:
     transform 0.2s ease,
     box-shadow 0.3s ease;
@@ -418,6 +433,7 @@ section h2 {
 .project-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+  color: var(--primary-color);
 }
 
 footer {
