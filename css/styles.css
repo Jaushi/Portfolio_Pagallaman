@@ -318,7 +318,7 @@ section h2 {
 }
 
 .tech-tags li {
-  padding: 0.4rem 0.75rem;
+  padding: 0.16rem 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   background: var(--bg-primary);
@@ -389,7 +389,7 @@ section h2 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
   color: var(--text-secondary);
   transition:
