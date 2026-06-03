@@ -20,6 +20,7 @@
 
   --container: 1100px;
   --radius: 14px;
+  --navbar-height: 72px;
   --shadow-sm:
     0 1px 2px -1px hsl(var(--shadow-color) / 0.1),
     0 2px 4px -2px hsl(var(--shadow-color) / 0.1);
@@ -53,7 +54,7 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  padding-top: 10px;
+  padding-top: calc(10px + var(--navbar-height));
   transition:
     background-color 0.3s ease,
     color 0.25s ease;
@@ -124,6 +125,148 @@ img {
 
 .theme-slider img {
   -webkit-user-drag: none;
+}
+
+.site-nav {
+  max-width: var(--container);
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-nav .nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.site-nav .nav-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.navbar {
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 0; 
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: transform 220ms ease, box-shadow 200ms ease, padding 200ms ease;
+}
+
+.navbar-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.navbar--scrolled {
+  box-shadow: var(--shadow-lg);
+  padding: 0.25rem 0;
+}
+
+.navbar--hidden {
+  transform: translateY(-120%);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggler:focus {
+  outline: 3px solid rgba(37,99,235,0.2);
+}
+
+.navbar-toggler-icon {
+  font-size: 1.1rem;
+}
+
+.navbar-collapse {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-item {}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive collapse behavior */
+@media (max-width: 768px) {
+  .navbar-collapse { display: none; }
+  .navbar-collapse.show { display: block; }
+  .navbar { align-items: flex-start; }
+  .navbar-nav { flex-direction: column; gap: 0.25rem; }
+}
+
+/* Indent list items in project cards for readability */
+.project-card ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.project-card ul li {
+  margin-bottom: 0.45rem;
 }
 
 .slider-icon {
@@ -500,10 +643,9 @@ footer {
 }
 
 
-/* Starry Night Animation */
 :root[data-theme="dark"] body {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  overflow-x: hidden; 
 }
 
 #stars, #stars2, #stars3 {
@@ -514,20 +656,20 @@ footer {
   bottom: 0;
   width: 100%;
   height: 100%;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 :root[data-theme="dark"] #stars,
 :root[data-theme="dark"] #stars2,
 :root[data-theme="dark"] #stars3 {
-    display: block; /* Only display in dark mode */
+    display: block; 
 }
 
 #stars {
   width: 1px;
   height: 1px;
   background: transparent;
-  box-shadow: /* A large number of stars... */ 698px 1803px #FFF, 1339px 1485px #FFF, 149px 1499px #FFF, 1135px 1033px #FFF, 1441px 1314px #FFF, 1379px 1605px #FFF, 1129px 129px #FFF, 1137px 114px #FFF, 1305px 529px #FFF, 1237px 1331px #FFF, 111px 1245px #FFF, 128px 1199px #FFF, 1385px 1430px #FFF, 1335px 1337px #FFF, 1920px 184px #FFF, 191px 1182px #FFF, 1469px 1083px #FFF, 135px 144px #FFF, 1359px 1319px #FFF, 1895px 1849px #FFF; /* ...many more stars */
+  box-shadow: 698px 1803px #FFF, 1339px 1485px #FFF, 149px 1499px #FFF, 1135px 1033px #FFF, 1441px 1314px #FFF, 1379px 1605px #FFF, 1129px 129px #FFF, 1137px 114px #FFF, 1305px 529px #FFF, 1237px 1331px #FFF, 111px 1245px #FFF, 128px 1199px #FFF, 1385px 1430px #FFF, 1335px 1337px #FFF, 1920px 184px #FFF, 191px 1182px #FFF, 1469px 1083px #FFF, 135px 144px #FFF, 1359px 1319px #FFF, 1895px 1849px #FFF; /* ...many more stars */
   animation: animStar 50s linear infinite;
 }
 
@@ -535,7 +677,7 @@ footer {
   width: 2px;
   height: 2px;
   background: transparent;
-  box-shadow: /* A medium number of stars... */ 1830px 1146px #FFF, 1479px 338px #FFF, 142px 1591px #FFF, 1534px 1285px #FFF, 413px 1217px #FFF, 1544px 1038px #FFF, 1050px 1213px #FFF, 143px 152px #FFF, 1288px 1232px #FFF, 1151px 124px #FFF; /* ...many more stars */
+  box-shadow: 1830px 1146px #FFF, 1479px 338px #FFF, 142px 1591px #FFF, 1534px 1285px #FFF, 413px 1217px #FFF, 1544px 1038px #FFF, 1050px 1213px #FFF, 143px 152px #FFF, 1288px 1232px #FFF, 1151px 124px #FFF; /* ...many more stars */
   animation: animStar 100s linear infinite;
 }
 
@@ -543,7 +685,7 @@ footer {
   width: 3px;
   height: 3px;
   background: transparent;
-  box-shadow: /* A smaller number of stars... */ 1014px 1209px #FFF, 108px 1008px #FFF, 1903px 133px #FFF, 1496px 1032px #FFF, 1146px 1841px #FFF; /* ...many more stars */
+  box-shadow: 1014px 1209px #FFF, 108px 1008px #FFF, 1903px 133px #FFF, 1496px 1032px #FFF, 1146px 1841px #FFF; /* ...many more stars */
   animation: animStar 150s linear infinite;
 }
 
@@ -556,19 +698,18 @@ footer {
   }
 }
 
-/* Animated Clouds for Light Mode */
 :root:not([data-theme="dark"]) #background-wrap {
   bottom: 0;
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 0; /* Ensure it's behind the content */
+  z-index: 0; 
   overflow: hidden;
 }
 
 .cloud {
-  background: #ffffff; /* White clouds */
+  background: #ffffff; 
   border-radius: 100px;
   box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
   height: 120px;
@@ -600,63 +741,60 @@ footer {
   top: -90px;
 }
 
-/* Positioning and Animation for each cloud */
 .x1, .x2, .x3, .x4, .x5 {
   position: absolute;
-  filter: blur(50px); /* Adds a soft blur to the clouds */
-  left: 0; /* Start from the left edge */
+  filter: blur(50px); 
+  left: 0; 
 }
 
 .x1 {
   animation: moveclouds 25s linear infinite;
-  animation-delay: -5s; /* Starts 5s into the animation */
+  animation-delay: -5s; 
   top: 10%;
   transform: scale(0.6);
 }
 
 .x2 {
   animation: moveclouds 35s linear infinite;
-  animation-delay: -18s; /* Starts 18s into the animation */
+  animation-delay: -18s; 
   top: 25%;
   transform: scale(0.8);
 }
 
 .x3 {
   animation: moveclouds 30s linear infinite;
-  animation-delay: -10s; /* Starts 10s into the animation */
+  animation-delay: -10s;
   top: 45%;
   transform: scale(0.5);
 }
 
 .x4 {
   animation: moveclouds 40s linear infinite;
-  animation-delay: -25s; /* Starts 25s into the animation */
+  animation-delay: -25s;
   top: 65%;
   transform: scale(0.7);
 }
 
 .x5 {
   animation: moveclouds 28s linear infinite;
-  animation-delay: 0s; /* Starts at the beginning */
+  animation-delay: 0s; 
   top: 80%;
   transform: scale(0.6);
 }
 
-/* Hide clouds in dark mode */
 :root[data-theme="dark"] #background-wrap {
   display: none;
 }
 
 @keyframes moveclouds {
   0% {
-    transform: translateX(100vw); /* Start completely off-screen to the right */
+    transform: translateX(100vw);
   }
   100% {
-    transform: translateX(-100%); /* End completely off-screen to the left */
+    transform: translateX(-100%);
   }
 }
 
-/* Light Mode Sky Gradient Background */
 :root:not([data-theme="dark"]) body {
   background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
   background-attachment: fixed;

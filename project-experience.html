@@ -16,6 +16,24 @@
   </head>
   <body>
     <header>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-inner">
+          <a class="navbar-brand" href="index.html">Joshua Pagallaman</a>
+          <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="project-experience.html" aria-current="page">Projects <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="assets/docs/PAGALLAMAN_CV (1).pdf" download aria-label="Download resume (PDF)">Resume</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <section class="profile-header">
         <div class="profile-details full-width-details">
           <div class="profile-title">
@@ -41,31 +59,95 @@
     </header>
 
     <main>
-      <div class="profile-actions">
-        <a href="index.html" class="home">
-          <i class="fa-solid fa-arrow-left-long"></i> Home</a
-        >
-      </div>
+      
       <section id="Project Experience" class="project-experience">
         <div class="project-grid">
           <article class="project-card">
-            <h3>UI/UX, Researcher, Pitcher | Byteme UST CSSprint Hackathon</h3>
+            <h3>UI/UX, Researcher, Pitcher | Byteme UST CSSprint Hackathon (1st Place)</h3>
+            <p><strong>Project Clara</strong> — December 2025</p>
             <p>
-              Secured 1st Place with Project Clara by designing a human-centric
-              UI/UX and delivering a winning pitch focused on an empathetic AI
-              over traditional surveillance tools. Led user research on Gen Z
-              workplace anxiety to pivot the product strategy toward
-              psychological safety and ethical conflict resolution.
+              Secured 1st Place out of 16 teams by delivering the winning pitch
+              that framed the "Work Kumare" narrative, effectively communicating
+              the unique value of an empathetic AI over traditional surveillance
+              tools.
             </p>
+            <ul>
+              <li>Led user research and problem validation; identified 40% stress rates among Gen Z respondents.</li>
+              <li>Pivoted product strategy toward psychological safety and ethical conflict resolution.</li>
+              <li>Designed a human-centric UI/UX translating complex AI agents ("Ethical Drift Detector", "Trust Currency") into an approachable dashboard.</li>
+            </ul>
           </article>
-          <!-- Add more project cards here -->
+
           <article class="project-card">
-            <h3>Project 2</h3>
-            <p>Description for project 2.</p>
+            <h3>Pitcher and Researcher | GCash AI Week GenAI Hackathon (Top 12 Finalist)</h3>
+            <p><strong>March 13, 2025</strong></p>
+            <p>
+              Selected as a Top 12 Finalist (top ~6%) from 200+ teams nationwide.
+              Delivered the strategic pitch for a collaborative GenAI financial
+              tracking platform and validated market viability with GCash
+              stakeholders.
+            </p>
+            <ul>
+              <li>Spearheaded user research and identified four critical pain points in group money management.</li>
+              <li>Prepared pitch materials and prototype demonstrations for executives and judges.</li>
+            </ul>
           </article>
+
           <article class="project-card">
-            <h3>Project 3</h3>
-            <p>Description for project 3.</p>
+            <h3>Backend Developer | ByteMinds Software Solutions (Remote)</h3>
+            <p><strong>April 2025 – December 2025</strong></p>
+            <ul>
+              <li>Accelerated API response times by refactoring backend services and optimizing database indexing.</li>
+              <li>Maintained on-time delivery across concurrent projects via Agile sprint planning.</li>
+              <li>Reduced system error rates by implementing secure REST APIs and structured error handling.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Backend Developer Intern | Oikos Technologies (Remote)</h3>
+            <p><strong>July 2025 – August 2025</strong></p>
+            <ul>
+              <li>Built admin dashboards and leasing management tools to increase internal data visibility.</li>
+              <li>Improved page load performance using optimized Spring Boot microservices with server-side caching.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Backend Developer & Pitcher | BPI Datawave Hackathon (BizAI)</h3>
+            <p><strong>September 27 – November 20, 2024</strong></p>
+            <ul>
+              <li>Reduced loan simulation steps by 40% integrating a React frontend with custom backend logic.</li>
+              <li>Conducted market research on MSME pain points to define three core product features.</li>
+              <li>Delivered live technical demo of an automated loan recommendation engine to industry judges.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Backend Developer | BPI Datawave Hackathon (SeedSync)</h3>
+            <p><strong>July 2025 – August 2025</strong></p>
+            <ul>
+              <li>Engineered an AI-assisted matching engine using Node.js, FastAPI, and TensorFlow to connect farmers and buyers.</li>
+              <li>Achieved sub-second data latency with real-time workflows using Socket.IO and Redis.</li>
+              <li>Standardized deployments with Docker and secured endpoints using JWT authentication.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Frontend Developer | Google Developer Group SparkFest 2025</h3>
+            <p><strong>February 2025</strong></p>
+            <ul>
+              <li>Developed a responsive interactive guide using React, Tailwind CSS, and ShadcnUI for 100+ participants.</li>
+              <li>Architected reusable UI components and enforced design system guidelines for consistency.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Frontend Developer | TaraTale (Contract)</h3>
+            <p><strong>September 2025 – November 2025</strong></p>
+            <ul>
+              <li>Engineered a gamified mobile learning prototype using Java and Kotlin with interactive story modules and quizzes.</li>
+              <li>Improved interface responsiveness by 50% through layout optimizations and early-childhood accessibility practices.</li>
+            </ul>
           </article>
         </div>
       </section>
@@ -98,5 +180,6 @@
         });
       })();
     </script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>
