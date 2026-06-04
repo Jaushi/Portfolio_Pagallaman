@@ -31,11 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Show project details when clicking a project card
   document.querySelectorAll('.project-card').forEach((card) => {
     card.style.cursor = 'pointer';
     card.addEventListener('click', (e) => {
-      // Prevent opening when clicking links inside the card
       if (e.target.tagName.toLowerCase() === 'a') return;
       const titleEl = card.querySelector('h3');
       const paragraphs = Array.from(card.querySelectorAll('p'));
