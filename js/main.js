@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    // Attach form handler if present
     attachFormHandler();
   }
 
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Attach form submit handler if form exists in modal
   function attachFormHandler() {
     const form = document.getElementById('contact-form');
     if (!form) return;
@@ -118,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (hasError) return;
 
-      // Send to PHP backend
       status.textContent = 'Sending message...';
       fetch('server/contact.php', {
         method: 'POST',
@@ -128,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(async (res) => {
           const data = await res.json().catch(() => null);
           if (res.ok && data && data.ok) return data;
-          // Validation errors
           if (res.status === 400 && data && data.errors) {
             Object.entries(data.errors).forEach(([k, v]) => showError(k, v));
             status.textContent = 'Please fix the fields highlighted below.';
@@ -148,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Real-time validation
     ['name','email','message'].forEach((field) => {
       const el = form.querySelector(`[name="${field}"]`);
       if (!el) return;

@@ -364,6 +364,7 @@ main {
   padding: 1rem 1.5rem;
   background-color: var(--primary-color-dark);
   color: white;
+  border: 1px solid var(--primary-color);
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 500;
