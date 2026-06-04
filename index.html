@@ -317,6 +317,18 @@
       <p>&copy; 2026 Joshua Pagallaman. All rights reserved.</p>
     </footer>
 
+    <!-- Interactive Modal (used for project details and contact form) -->
+    <div id="interactive-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title"></h2>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <button id="contact-btn" class="contact-btn" aria-label="Open contact form">Contact</button>
+
     <script>
       (() => {
         const root = document.documentElement;
@@ -340,5 +352,6 @@
       })();
     </script>
     <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

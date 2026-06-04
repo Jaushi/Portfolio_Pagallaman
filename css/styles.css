@@ -223,7 +223,7 @@ img {
   align-items: center;
 }
 
-.nav-item {}
+
 
 .nav-link {
   text-decoration: none;
@@ -798,4 +798,29 @@ footer {
 :root:not([data-theme="dark"]) body {
   background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
   background-attachment: fixed;
+}
+
+/* Modal & Contact Button Styles */
+.modal.hidden { display: none; }
+.modal { position: fixed; inset: 0; z-index: 2000; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(2px); }
+.modal-panel { position: relative; max-width: 760px; margin: 6vh auto; background: var(--bg-secondary); color: var(--text-primary); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); z-index: 2; }
+.modal-close { position: absolute; right: 12px; top: 8px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-secondary); }
+.modal-panel h2 { margin-top: 0; }
+.modal-panel p { color: var(--text-secondary); }
+
+.contact-btn { position: fixed; right: 18px; bottom: 18px; z-index: 2100; background: var(--primary-color); color: #fff; border: none; border-radius: 999px; padding: 0.75rem 1rem; box-shadow: var(--shadow-lg); cursor: pointer; font-weight: 700; }
+.contact-btn:focus { outline: 3px solid rgba(37,99,235,0.18); }
+
+.form-row { margin-bottom: 0.85rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.form-row label { font-weight: 600; color: var(--text-primary); }
+.form-row input, .form-row textarea { padding: 0.6rem 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-primary); }
+.form-row input:focus, .form-row textarea:focus { outline: none; box-shadow: 0 0 0 3px rgba(37,99,235,0.06); border-color: var(--primary-color); }
+.field-error { color: #d9534f; font-size: 0.9rem; min-height: 1.1rem; }
+.form-actions { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.5rem; }
+.cta-button.secondary { background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); }
+
+@media (max-width: 520px) {
+  .modal-panel { margin: 4vh 12px; padding: 1rem; }
+  .contact-btn { right: 12px; bottom: 12px; padding: 0.5rem 0.75rem; }
 }
