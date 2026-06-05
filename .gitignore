@@ -1,3 +1,4 @@
 # Private credentials for the owner-only admin page
 server/admin-config.php
 server/admin-config.local.php
+server/db-config.local.php

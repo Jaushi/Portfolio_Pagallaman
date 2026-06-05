@@ -24,6 +24,16 @@ if ($path === '/admin') {
   return true;
 }
 
+if ($path === '/admin-login') {
+  require $documentRoot . '/server/admin-login.php';
+  return true;
+}
+
+if ($path === '/admin-logout') {
+  require $documentRoot . '/server/admin-logout.php';
+  return true;
+}
+
 if ($path === '/' || $path === '') {
   $target = $documentRoot . '/index.html';
 }

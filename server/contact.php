@@ -42,23 +42,45 @@ $entry = [
   'ts' => date(DATE_ATOM)
 ];
 
+// Try to save to database first (using PDO + prepared statements).
+$savedToDb = false;
+try {
+  $pdo = require __DIR__ . '/db.php';
+  $stmt = $pdo->prepare('INSERT INTO messages (name, email, message, ts) VALUES (:name, :email, :message, :ts)');
+  $stmt->execute([
+    ':name' => $entry['name'],
+    ':email' => $entry['email'],
+    ':message' => $entry['message'],
+    ':ts' => date('Y-m-d H:i:s')
+  ]);
+  $savedToDb = true;
+} catch (Throwable $e) {
+  // Log DB error and fall back to file storage.
+  error_log('DB insert failed: ' . $e->getMessage());
+}
+
+// Ensure private file backup always exists; write if DB not available
 $dir = __DIR__ . '/../../WebDev-Pagallaman-private';
 if (!is_dir($dir) && !mkdir($dir, 0775, true) && !is_dir($dir)) {
-  http_response_code(500);
-  echo json_encode(['ok' => false, 'message' => 'Failed to prepare storage']);
-  exit;
+  if (!$savedToDb) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'message' => 'Failed to prepare storage']);
+    exit;
+  }
 }
 
 $file = $dir . '/messages.jsonl';
 $line = json_encode($entry, JSON_UNESCAPED_UNICODE) . PHP_EOL;
-if (file_put_contents($file, $line, FILE_APPEND | LOCK_EX) === false) {
-  http_response_code(500);
-  echo json_encode(['ok' => false, 'message' => 'Failed to save message']);
-  exit;
+if (!$savedToDb) {
+  if (file_put_contents($file, $line, FILE_APPEND | LOCK_EX) === false) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'message' => 'Failed to save message']);
+    exit;
+  }
 }
 
-error_log('New contact message: ' . json_encode($entry));
+error_log('New contact message: ' . json_encode($entry) . ' savedToDb=' . ($savedToDb ? '1' : '0'));
 
-echo json_encode(['ok' => true, 'message' => 'Saved']);
+echo json_encode(['ok' => true, 'message' => 'Saved', 'savedToDb' => $savedToDb]);
 
 ?>
