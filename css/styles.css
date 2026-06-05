@@ -562,14 +562,8 @@ section h2 {
   max-width: 70ch;
 }
 
-#experience {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow-sm);
-}
-
+#experience,
+#blog-section,
 #community-involvement {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -825,3 +819,11 @@ footer {
   .modal-panel { margin: 4vh 12px; padding: 1rem; }
   .contact-btn { right: 12px; bottom: 12px; padding: 0.5rem 0.75rem; }
 }
+
+/* Dynamic Data Section */
+.hidden { display: none !important; }
+.loader { font-weight: 500; color: var(--text-secondary); text-align: center; padding: 2rem; }
+.loader::after { content: ''; display: inline-block; width: 1.2rem; height: 1.2rem; margin-left: 0.5rem; border: 2px solid var(--text-secondary); border-right-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.error-message { color: #d9534f; background-color: #fdf2f2; border: 1px solid #f8cbcb; padding: 1rem; border-radius: var(--radius); text-align: center; margin-bottom: 1rem; }
+:root[data-theme="dark"] .error-message { background-color: #2c1212; border-color: #5a2626; color: #fca5a5; }

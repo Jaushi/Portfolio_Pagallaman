@@ -108,8 +108,8 @@
               (and hopefully doesn't break in production). From crafting snappy React 
               UIs and exploring Spring Boot/PostgreSQL backends to wrestling Docker 
               containers into submission, I love the entire learning process. When I'm AFK, 
-              you can find me touching grass, usually running or playing sports or hunting 
-              for the perfect UI color palette. If you love pitching concepts at hackathons, 
+              you can find me touching grass, usually running or playing sports.
+              If you love pitching concepts at hackathons, 
               building cool things, or chatting about tech trends, let's connect!
             </p>
           </section>
@@ -153,31 +153,23 @@
             </div>
           </section>
 
-          <section id="community-involvement">
-            <h2>Community Involvement</h2>
-            <div class="project-grid">
-              <article class="project-card">
-                <h3>
-                  Executive Director – Skills and Technology Engineering
-                  Microsoft Student Community, PUP Manila
-                </h3>
-                <p>
-                  Orchestrated technical workshops and hackathon initiatives
-                  that upskilled over community members in
-                  Microsoft technologies.
-                </p>
-              </article>
+          <section id="blog-section">
+            <div class="section-head">
+              <h2>Latest Blog Posts</h2>
+              <a href="#" class="view-all" aria-label="View all blog posts">
+                View All <i class="fa-solid fa-arrow-right-long"></i>
+              </a>
+            </div>
+            
+            <div id="blog-content-container">
+              <div id="loading-spinner" class="loader">Loading posts...</div>
 
-              <article class="project-card">
-                <h3>
-                  Backend Development Lead Google Developer Group – PUP Manila
-                </h3>
-                <p>
-                  Facilitated hands-on backend development workshops for 150+
-                  students, delivering comprehensive training in API design and
-                  server-side logic.
-                </p>
-              </article>
+              <div id="error-message" class="error-message hidden">
+                Failed to load blog posts. Please try again later.
+              </div>
+
+              <div id="blog-list" class="project-grid hidden">
+              </div>
             </div>
           </section>
         </div>
@@ -305,6 +297,34 @@
               <article class="certification-card">
                 <h3>Enterprise Training Completion</h3>
                 <p>Oikos Technologies</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="community-involvement">
+            <h2>Leadership</h2>
+            <div class="project-grid">
+              <article class="project-card">
+                <h3>
+                  Executive Director – Skills and Technology Engineering
+                  Microsoft Student Community, PUP Manila
+                </h3>
+                <p>
+                  Orchestrated technical workshops and hackathon initiatives
+                  that upskilled over community members in
+                  Microsoft technologies.
+                </p>
+              </article>
+
+              <article class="project-card">
+                <h3>
+                  Backend Development Lead Google Developer Group – PUP Manila
+                </h3>
+                <p>
+                  Facilitated hands-on backend development workshops for 150+
+                  students, delivering comprehensive training in API design and
+                  server-side logic.
+                </p>
               </article>
             </div>
           </section>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "My Journey into Backend Development: Why Spring Boot?",
+    "body": "When I first started building web applications, I was immediately drawn to the frontend. However, as my projects grew more complex, I realized the true magic happens behind the scenes. In this post, I dive into why I chose Java and Spring Boot as my primary backend stack, and how it completely changed my perspective on software architecture."
+  },
+  {
+    "id": 2,
+    "title": "Surviving My First Hackathon: Byteme UST CSSprint",
+    "body": "Hackathons are intense, caffeine-fueled sprints that test your limits. Winning 1st place at the Byteme UST CSSprint was an incredible experience. We built an empathetic AI dashboard to combat Gen Z workplace anxiety. Here are my top tips for preparing, pitching, and surviving your first major hackathon without burning out."
+  },
+  {
+    "id": 3,
+    "title": "Dockerizing a PostgreSQL Database for Local Development",
+    "body": "Setting up databases locally used to be a nightmare of conflicting versions and messy environment variables. Then I discovered Docker. Containerizing my PostgreSQL database has streamlined my development workflow significantly. This guide walks you through setting up a simple docker-compose file to get your database running in seconds."
+  },
+  {
+    "id": 4,
+    "title": "The Power of Community: Leading at Microsoft Student Community",
+    "body": "Being the Executive Director for Skills and Technology Engineering at MSC PUP Manila has taught me more about leadership than any textbook could. From organizing workshops to mentoring peers, fostering a tech community is incredibly rewarding. Here's why you should get involved in student developer groups at your university."
+  }
+]

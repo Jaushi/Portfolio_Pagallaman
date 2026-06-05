@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Joshua Pagallaman - Blog Post"
+    />
+    <meta name="author" content="Joshua Pagallaman" />
+    <title>Blog Post - Joshua Pagallaman</title>
+    <link rel="icon" type="image/png" href="assets/images/prof_portfolio.png" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      .blog-post-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-sm);
+      }
+      .blog-post-title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+      }
+      .blog-post-body {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-primary);
+        text-align: justify;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s ease;
+      }
+      .back-link:hover {
+        transform: translateX(-4px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div id="background-wrap">
+      <div class="x1"><div class="cloud"></div></div>
+      <div class="x2"><div class="cloud"></div></div>
+      <div class="x3"><div class="cloud"></div></div>
+      <div class="x4"><div class="cloud"></div></div>
+      <div class="x5"><div class="cloud"></div></div>
+    </div>
+
+    <header>
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-inner">
+          <a class="navbar-brand" href="index.html">Joshua Pagallaman</a>
+          <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="project-experience.html">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="assets/docs/PAGALLAMAN_CV (1).pdf" download aria-label="Download resume (PDF)">Resume</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="blog-post-container" id="post-container">
+        <a href="index.html#blog-section" class="back-link">&larr; Back to Home</a>
+        
+        <div id="loading-spinner" class="loader">Loading post...</div>
+        
+        <div id="error-message" class="error-message hidden">
+          Failed to load the blog post. It might not exist.
+        </div>
+
+        <div id="post-content" class="hidden">
+          <h1 class="blog-post-title" id="post-title"></h1>
+          <div class="blog-post-body" id="post-body"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Glad we crossed paths, see you around!</p>
+      <p>&copy; 2026 Joshua Pagallaman. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Modal (used for project details and contact form) -->
+    <div id="interactive-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title"></h2>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+    
+    <button id="contact-btn" class="contact-btn" aria-label="Open contact form">Contact</button>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const saved = localStorage.getItem("theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+        function setTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        }
+        const initialTheme = saved || (systemDark.matches ? "dark" : "light");
+        setTheme(initialTheme);
+      })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = parseInt(urlParams.get('id'));
+
+        const loader = document.getElementById('loading-spinner');
+        const errorMessage = document.getElementById('error-message');
+        const postContent = document.getElementById('post-content');
+        const titleEl = document.getElementById('post-title');
+        const bodyEl = document.getElementById('post-body');
+
+        if (!postId) {
+          loader.classList.add('hidden');
+          errorMessage.classList.remove('hidden');
+          return;
+        }
+
+        setTimeout(() => {
+          fetch('data/blogs.json')
+            .then(res => {
+              if (!res.ok) throw new Error('Network response was not ok');
+              return res.json();
+            })
+            .then(data => {
+              loader.classList.add('hidden');
+              const post = data.find(p => p.id === postId);
+              if (post) {
+                titleEl.textContent = post.title;
+                // Simple formatting to add paragraphs
+                bodyEl.innerHTML = post.body.split('\\n').map(p => '<p>' + p + '</p>').join('');
+                postContent.classList.remove('hidden');
+                document.title = post.title + " - Joshua Pagallaman";
+              } else {
+                errorMessage.classList.remove('hidden');
+              }
+            })
+            .catch(err => {
+              console.error('Error fetching post:', err);
+              loader.classList.add('hidden');
+              errorMessage.classList.remove('hidden');
+            });
+        }, 500);
+      });
+    </script>
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

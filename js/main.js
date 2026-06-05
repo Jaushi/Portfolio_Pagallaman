@@ -171,4 +171,72 @@ document.addEventListener('DOMContentLoaded', () => {
   function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
+
+  // Dynamic Data Fetching (Blog)
+  const blogContainer = document.getElementById('blog-content-container');
+  if (blogContainer) {
+    const loader = document.getElementById('loading-spinner');
+    const errorMessage = document.getElementById('error-message');
+    const blogList = document.getElementById('blog-list');
+
+    function fetchBlogPosts() {
+      loader.classList.remove('hidden');
+      errorMessage.classList.add('hidden');
+      blogList.classList.add('hidden');
+      blogList.innerHTML = '';
+
+      setTimeout(() => {
+        fetch('data/blogs.json')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            loader.classList.add('hidden');
+            blogList.classList.remove('hidden');
+            
+            if (!data || data.length === 0) {
+              blogList.innerHTML = '<p>No blog posts available at the moment.</p>';
+              return;
+            }
+
+            data.forEach(item => {
+              const article = document.createElement('article');
+              article.className = 'project-card';
+              
+              const title = document.createElement('h3');
+              title.textContent = item.title.charAt(0).toUpperCase() + item.title.slice(1);
+              
+              const body = document.createElement('p');
+              body.textContent = item.body.length > 80 ? item.body.substring(0, 80) + '...' : item.body;
+              
+              const readMore = document.createElement('a');
+              readMore.href = `blog-post.html?id=${item.id}`;
+              readMore.textContent = 'Read more \u2192';
+              readMore.style.display = 'inline-block';
+              readMore.style.marginTop = '0.75rem';
+              readMore.style.color = 'var(--primary-color)';
+              readMore.style.textDecoration = 'none';
+              readMore.style.fontWeight = '600';
+              readMore.style.fontSize = '0.9rem';
+              
+              article.appendChild(title);
+              article.appendChild(body);
+              article.appendChild(readMore);
+              blogList.appendChild(article);
+            });
+          })
+          .catch(error => {
+            console.error('Data fetch error:', error);
+            loader.classList.add('hidden');
+            errorMessage.classList.remove('hidden');
+            errorMessage.textContent = 'Failed to load blog posts. Please check your connection and try again.';
+          });
+      }, 800);
+    }
+
+    fetchBlogPosts();
+  }
 });
